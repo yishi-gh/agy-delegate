@@ -2,8 +2,6 @@
 
 把 Google Antigravity CLI（`agy`）作为子智能体接入任意 agent 宿主。
 
-## 徽章
-
 ![license](https://img.shields.io/badge/license-MIT-green)
 ![python](https://img.shields.io/badge/python-3.8%2B-blue)
 ![platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-lightgrey)
