@@ -80,7 +80,7 @@ def build_cmd(args, agy: str, task: str) -> list:
     # 实测（2026-09-25）无 --cwd flag，官方文档亦未记载：工作目录 = 子进程 cwd（Popen 传入）+ --add-dir 加入工作区
     cmd += ["--add-dir", args.dir]
     if not args.ask_permissions:
-        # 用户决策（2026-09-25）：默认全放行自动审批，链路优先；
+        # 默认全放行自动审批（链路优先）：
         # 官方 flag，permission_mode 变 always-proceed。敏感任务用 --ask-permissions 收敛。
         cmd += ["--dangerously-skip-permissions"]
     if args.model:
