@@ -1,4 +1,4 @@
-# agy-delegate
+# agy-subagent-skill
 
 把 Google Antigravity CLI（`agy`）作为子智能体接入任意 agent 宿主。
 
@@ -35,11 +35,11 @@
 
 ```bash
 git clone <repo>
-cd agy-delegate
+cd agy-subagent-skill
 # ZCode：
-mkdir -p ~/.zcode/skills && cp -r . ~/.zcode/skills/agy-delegate
+mkdir -p ~/.zcode/skills && cp -r . ~/.zcode/skills/agy-subagent-skill
 # Claude Code：
-# mkdir -p ~/.claude/skills && cp -r . ~/.claude/skills/agy-delegate
+# mkdir -p ~/.claude/skills && cp -r . ~/.claude/skills/agy-subagent-skill
 python agy_drive.py --check   # 预检：版本/认证/网络，不消耗额度
 ```
 
