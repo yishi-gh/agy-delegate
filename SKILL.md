@@ -1,5 +1,5 @@
 ---
-name: agy-delegate
+name: agy-subagent-skill
 description: 把前端 / UI 设计与实现任务委派给 agy（Google Antigravity CLI）子代理：组件实现、页面样式/CSS、设计稿或截图转代码、UI 还原与多变体、前端代码探索与对抗式 UI 审阅。也承接通用重活委派（跨文件分析、深搜、文档查询）。不适用于浏览器实时验证、最终集成与验收（这些由主代理完成）。当任务涉及 frontend/UI/component/样式/还原/前端目录时使用。
 ---
 
