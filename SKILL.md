@@ -9,11 +9,11 @@ description: 把前端 / UI 设计与实现任务委派给 agy（Google Antigrav
 
 ## 红线（先读）
 
-- **工具权限：默认全放行**（脚本自动传 `--dangerously-skip-permissions`；用户 2026-09-25 决策"全部允许、不卡链路"）。仅对不可信仓库/陌生代码的委派加 `--ask-permissions` 收敛。
+- **工具权限：默认全放行**（脚本自动传 `--dangerously-skip-permissions`，避免链路被审批打断）。仅对不可信仓库/陌生代码的委派加 `--ask-permissions` 收敛。
 - **禁止**读取、存储、转发 agy 的 OAuth 凭据——只 spawn 二进制本身，凭据留在 agy 进程内。
 - 订阅额度是共享池（5 小时刷新 + 周上限，按 token 折算）：一次 spawn 冷启动实测 ~1.2 万 input token，**别碎问、别当无限 worker**。
 
-## 认证与代理（重要，本机实测结论）
+## 认证与代理（重要，实测结论）
 
 - agy 需先完成一次交互式登录（终端**不带参数**运行 `agy`，走浏览器 OAuth）。未登录时无头调用报 `authentication required`。
 - **登录必须走临时代理**：不走代理时 OAuth 完成后本地登录态识别不出来。按用户实际终端选写法（代理均不落盘）：
@@ -66,7 +66,7 @@ python "<本 skill 目录>/agy_drive.py" \
   [--model <slug>]         # 不传则用 agy settings 默认；要指定先 `agy models` 查
   #
   # 模型 slug（2026-09-25 实测 `agy models`）：flash 系自带档位，勿再叠加 --effort：
-  #   gemini-3.8-flash-high / -medium / -low   ← 前端实施默认 high 档（AGENTS.md 口径）
+  #   gemini-3.8-flash-high / -medium / -low   ← 前端实施默认 high 档
   #   gemini-3.7-flash-* / gemini-3.6-flash-* / gemini-3.1-pro-{high,low}
   #   claude-sonnet-4-6 / claude-opus-4-6-thinking / gpt-oss-120b-medium（独立限流池，省着用）
   #   --effort 仅用于不带档位的 slug；前台 UI 实施组合 = --model gemini-3.8-flash-high
